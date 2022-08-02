@@ -9,11 +9,11 @@ import java.util.List;
 @Service
 public class userService {
     @Autowired
-    userRepo userrepo;
+    userRepo userRepo;
 
     public user saveUser(user user){
-        return userRepo.save();
-        return user;
+        return userRepo.save(user);
+        //return user;
     }
 
     public List<user> getAllUsers(){
@@ -21,8 +21,8 @@ public class userService {
         return userRepo.findAll();
     }
 
-    public String deleteuser(Integer id){
-        userRepo.deleteById(id);
+    public String deleteuser(Integer Id){
+        userRepo.deleteById(Id);
         return "deleted";
     }
 

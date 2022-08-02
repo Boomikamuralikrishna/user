@@ -17,19 +17,19 @@ public class controllerclass {
         return new ResponseEntity<>(userservice.getAllUsers(), HttpStatus.OK);
     }
 
-    @PostMapping("/user/save/{id}/{name}/{phone}/{email}/{address}")
-    public ResponseEntity<?> saveUser(@PathVariable("id") Integer id,  @PathVariable("name") String name, @PathVariable("phone") String phone, @PathVariable("email") String email, @PathVariable("address") String address) {
+    @PostMapping("/user/save/{Id}/{name}/{phone}/{email}/{address}")
+    public ResponseEntity<?> saveUser(@PathVariable("Id") Integer Id,  @PathVariable("name") String name, @PathVariable("phone") String phone, @PathVariable("email") String email, @PathVariable("address") String address) {
 
-        return new ResponseEntity<>("" + "been added "+userservice.saveUser(new user(id,name,phone,email,address)),HttpStatus.CREATED);
+        return new ResponseEntity<>("" + "been added "+userservice.saveUser(new user(Id,name,phone,email,address)),HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/user/delete/{id}")
-    public ResponseEntity<?> deleteUser(@PathVariable("id") Integer id){
-        return new ResponseEntity<>(userservice.deleteuser(id),HttpStatus.OK);
+    @DeleteMapping("/user/delete/{Id}")
+    public ResponseEntity<?> deleteUser(@PathVariable("Id") Integer Id){
+        return new ResponseEntity<>(userservice.deleteuser(Id),HttpStatus.OK);
     }
 
-    @PutMapping("/user/update/{id}/{name}/{phone}/{email}/{address}")
-    public ResponseEntity<?> updateUser(@PathVariable("id") Integer id,  @PathVariable("name") String name, @PathVariable("phone") String phone, @PathVariable("email") String email, @PathVariable("address") String address) {
-        return new ResponseEntity<>(" added "+userservice.updateUser(new user(id,name,email,phone,address)),HttpStatus.CREATED);
+    @PutMapping("/user/update/{Id}/{name}/{phone}/{email}/{address}")
+    public ResponseEntity<?> updateUser(@PathVariable("Id") Integer Id,  @PathVariable("name") String name, @PathVariable("phone") String phone, @PathVariable("email") String email, @PathVariable("address") String address) {
+        return new ResponseEntity<>(" added "+userservice.updateUser(new user(Id,name,email,phone,address)),HttpStatus.CREATED);
     }
 }

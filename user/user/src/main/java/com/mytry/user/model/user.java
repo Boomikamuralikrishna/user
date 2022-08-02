@@ -6,12 +6,12 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "users")
 public class user {
-@Id
-    private String name;
+    @Id
+    private Integer Id;
     private String email;
     private String address;
     private String phone;
-    private Integer Id;
+    private String name;
 
     public user(Integer id, String name, String phone, String email, String address){
 
